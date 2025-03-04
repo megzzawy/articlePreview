@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Article preview component</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="photo">
+        <img src="images/drawers.jpg">
+    </div>
+
+    <div class="content">
+        <h3>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h3>
+        <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
+
+        <div class="profile " id="profile">
+            <img src="images/avatar-michelle.jpg" alt="Michelle Appleton" class="profilePic">
+            <div class="name-date">
+                <p><strong>Michelle Appleton</strong></p>
+                <p>28 Jun 2020</p>
+            </div>
+            <div class="share-container">
+                <button class="shareButton" id="shareButton">
+                    <img src="images/icon-share.svg" alt="Share" class="shareIcon">
+                </button>
+            </div>
+        </div>
+
+        <div class="share-label" id="shareLabel">
+            <span>SHARE</span>
+            <img src="images/icon-facebook.svg" alt="Facebook">
+            <img src="images/icon-twitter.svg" alt="Twitter">
+            <img src="images/icon-pinterest.svg" alt="Pinterest">
+            <div class="share-container">
+              <button class="shareButton" id="shareButton2">
+                  <img src="images/icon-share.svg" alt="Share" class="shareIcon">
+              </button>
+          </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+const shareButton = document.getElementById("shareButton");
+const shareButton2 = document.getElementById("shareButton2");
+const shareLabel = document.getElementById("shareLabel");
+const profile = document.getElementById("profile");
+
+shareButton.addEventListener('click', function () {
+    if (window.innerWidth <= 375) {
+            profile.classList.toggle('hidden');
+            shareLabel.classList.toggle('visible');
+        }
+    }
+);
+
+shareButton2.addEventListener('click', function () {
+  if (window.innerWidth <= 375) {
+          profile.classList.remove('hidden');
+          shareLabel.classList.remove('visible');
+      } 
+  })
+
+
+    
+</script>
+</html>

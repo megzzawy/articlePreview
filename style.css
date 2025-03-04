@@ -1,0 +1,249 @@
+body {
+    font-family: "Manrope", serif;
+    font-optical-sizing: auto;
+    background-color: hsl(210, 46%, 95%);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+@media (min-width: 375px) {
+    .container {
+        display: grid;
+        max-width: 800px;
+        max-height: 300px;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 300px;
+        gap: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.12);
+        overflow-block: visible;
+    }
+
+    .container .photo img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .container .content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-right: 20px;
+        
+    }
+    h3 {
+        font-size: 22px;
+    }
+    p {
+        font-size: 15px;
+    }
+
+    .profile {
+        display: grid;
+        align-items: center;
+
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: 2fr;
+        gap: 10px;
+
+    }
+    .profilePic {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .name-date {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+    }
+    .profile .name-date p {
+        margin: 0;
+        font-size: 0.9em;
+        color: #777;
+    }
+
+    .share-container {
+        position: relative;
+        overflow: visible;
+    }
+    .shareButton {
+        background: none;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease; /* Smooth transition for hover and click effects */
+    }
+
+    .shareButton.active {
+        background-color: hsl(217, 19%, 35%); /* Background color for the circle */
+    }
+
+    .shareButton.active .shareIcon {
+        filter: brightness(0) invert(1); /* Make the icon white */
+    }
+
+
+    .share-label {
+        display: none;
+        position: absolute;
+        bottom: 51px;
+        right: -72px;
+        background-color: hsl(217, 19%, 35%);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        gap: 10px;
+    }
+    .share-label::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 10px 10px 0;
+        border-style: solid;
+        border-color: hsl(217, 19%, 35%) transparent transparent;
+    }
+
+    .share-label.visible {
+        display: flex; /* Show the label when visible */
+    }
+
+    .share-label img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .container {
+        display: grid;
+        max-width: 300px;
+        max-height: 550px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px 400px 100px;
+        gap: 0px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.12);
+        overflow-block:hidden;
+    }
+
+    .container .photo img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .container .content {
+        margin: 0px 30px 30px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        
+    }
+    h3 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 15px;
+    }
+
+    .profile {
+        display: grid;
+        align-items: center;
+
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: 2fr;
+        gap: 15px;
+        margin-bottom: 30px;
+
+    }
+    .profilePic {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .name-date {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+    }
+    .profile .name-date p {
+        margin: 0;
+        font-size: 0.9em;
+        color: #777;
+    }
+    .profile.hidden{
+        display: none;
+    }
+
+    .share-container {
+        position: relative;
+        overflow: visible;
+    }
+    .shareButton {
+        background: none;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease; 
+    }
+
+    .shareButton.active {
+        background-color: hsl(217, 19%, 35%); 
+    }
+
+    .shareButton.active .shareIcon {
+        filter: brightness(0) invert(1); 
+    }
+
+
+
+
+    .share-label {
+        display: none;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+        grid-template-rows: 1fr;
+        background-color: hsl(217, 19%, 35%);
+        color: rgb(255, 255, 255);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 0 30px 0 30px;
+        border-radius: 0px 0px 10px 10px; 
+    }
+
+    #shareLabel.visible {
+        display: flex ; 
+        
+    }
+
+    .share-label img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+}
+
